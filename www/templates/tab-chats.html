@@ -1,0 +1,15 @@
+<ion-view view-title="forcast">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="(key,item) in forcast.list">
+        <span class="tab-item">{{item.dt|dateFilter}}</span>
+        <span class="tab-item">rain = {{item.rain}}</span>
+        <span class="tab-item">humidity = {{item.humidity}}</span>
+        <span class="tab-item">pressure = {{item.pressure}}</span>
+        <span class="tab-item" ng-repeat="(key1,value) in item.temp" >{{key1}} = {{value}}</span>
+
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

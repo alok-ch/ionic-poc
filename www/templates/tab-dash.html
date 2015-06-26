@@ -1,0 +1,41 @@
+<ion-view view-title="Get Todays Forecast for your city" >
+  <ion-content class="padding">
+    <div class="list card">
+      <div class="item item-divider">Enter Your city name
+        <div class="list list-inset">
+          <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" ng-model="cityName" placeholder="Search" ng-change="getCityData(cityName)">
+          </label>
+
+        </div>
+        </div>
+    </div>
+          <ul class="list list-inset">
+              <li class="item ">
+                  <h3 class="title">City Name :<span class="positive">{{data.name}}</span> </h3>
+              </li>
+              <li class="item" ng-repeat="(key,y) in data.coord">
+                  <span class=" item item-divider">{{key }}</span>
+                  <span class="positive">{{y}}</span>
+              </li>
+              <li class="item" ng-repeat="(key,y) in data.wind">
+                  <span class=" item item-divider">wind {{key }}</span>
+                  <span class="positive">  {{y}}</span>
+              </li>
+              <li class="item" >
+                  weather
+                  <span class=" positive "> {{data.weather[0].main }}</span>
+                  <span class="positive">  {{data.weather[0].description}}</span>
+              </li>
+              <li class="item" ng-repeat="(key,x) in data.main">
+                  <span class=" item item-divider">{{key }}</span>
+                  <span class="positive">{{x}}</span>
+              </li>
+
+          </ul>
+
+
+
+  </ion-content>
+</ion-view>
